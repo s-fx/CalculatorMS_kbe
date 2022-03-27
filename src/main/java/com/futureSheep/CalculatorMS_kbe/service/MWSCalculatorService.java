@@ -1,9 +1,14 @@
 package com.futureSheep.CalculatorMS_kbe.service;
 
-public interface MWSCalculatorService {
+import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 
-    double calculateMWS(double price);
+@Service("MWSCalculator")
+public class MWSCalculatorService {
 
+    public BigDecimal calculateMWS(BigDecimal price) {
+        return price.multiply(BigDecimal.valueOf(0.18));
+    }
 
 }
